@@ -1,7 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AlertService } from '../../../services/alert.service'; // ✅ Importación del servicio
 
@@ -10,7 +10,7 @@ import { AlertService } from '../../../services/alert.service'; // ✅ Importaci
   standalone: true,
   templateUrl: './register-page.component.html',
   styleUrls: ['./register-page.component.css'],
-  imports: [CommonModule, FormsModule]
+  imports: [CommonModule, FormsModule, HttpClientModule ]
 })
 export class RegisterPageComponent {
   @ViewChild('nombre') nombreRef!: ElementRef;

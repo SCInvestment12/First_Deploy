@@ -6,6 +6,7 @@ import { DepositModalComponent } from '../deposit-modal/deposit-modal.component'
 import { Inject } from '@angular/core';
 import { AlertService } from '../../services/alert.service';
 
+
 import {
   trigger,
   style,
@@ -19,6 +20,7 @@ import {
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
   imports: [CommonModule, TradingChartComponent, DepositModalComponent],
+
   animations: [
     trigger('fadeIn', [
       transition(':enter', [

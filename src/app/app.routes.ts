@@ -1,3 +1,4 @@
+// src/app/app.routes.ts
 import { Routes } from '@angular/router';
 import { LoginPageComponent } from './pages/acceso/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/acceso/register-page/register-page.component';
@@ -19,4 +20,3 @@ export const routes: Routes = [
   { path: 'buscar', component: BuscarPageComponent },
   { path: '**', component: NotFoundComponent }
 ];
-

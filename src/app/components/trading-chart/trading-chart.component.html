@@ -1,8 +1,11 @@
-<apx-chart
-  [series]="chartOptions.series"
-  [chart]="chartOptions.chart"
-  [xaxis]="chartOptions.xaxis"
-  [dataLabels]="chartOptions.dataLabels"
-  [title]="chartOptions.title"
-  [tooltip]="chartOptions.tooltip">
-</apx-chart>
+<!-- Solo se renderiza si estamos en el navegador -->
+<div *ngIf="isBrowser && chartOptions">
+  <apx-chart
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+    [xaxis]="chartOptions.xaxis"
+    [dataLabels]="chartOptions.dataLabels"
+    [title]="chartOptions.title"
+    [tooltip]="chartOptions.tooltip">
+  </apx-chart>
+</div>
