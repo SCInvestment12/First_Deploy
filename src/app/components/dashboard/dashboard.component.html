@@ -1,0 +1,163 @@
+<div class="container dashboard-container dashboard-dark" [@fadeIn]>
+
+  <!-- DASHBOARD ADMIN -->
+  <div *ngIf="esAdmin()" [@fadeIn]>
+    <h2 class="text-center mb-4 text-primary">Panel Administrativo</h2>
+
+    <div class="dashboard-cards">
+      <div class="card"><h4>Usuarios Totales</h4><p>154</p></div>
+      <div class="card"><h4>Activos Hoy</h4><p>48</p></div>
+      <div class="card"><h4>Reportes Pendientes</h4><p>6</p></div>
+      <div class="card"><h4>Nuevos Registros</h4><p>12</p></div>
+      <div class="card"><h4>Inicios de Sesion</h4><p>89</p></div>
+      <div class="card"><h4>Auditorías Realizadas</h4><p>4</p></div>
+    </div>
+
+    <div class="dashboard-actions mb-4">
+      <button class="btn btn-success">Registrar Usuario</button>
+      <button class="btn btn-primary">Listar Usuarios</button>
+      <button class="btn btn-warning">Buscar Usuario</button>
+      <button class="btn btn-danger">Eliminar Usuario</button>
+      <button class="btn btn-dark">Ver Bitácora</button>
+      <button class="btn btn-info">Asignar Roles</button>
+    </div>
+
+    <div class="admin-panel">
+      <h5>Gráficas de Actividad</h5>
+      <div class="chart-placeholder">[ Gráfica de barras de actividad ]</div>
+
+      <h5 class="mt-4">Logs del Sistema</h5>
+      <ul class="list-group">
+        <li class="list-group-item">Se modificó rol de usuario ID 23</li>
+        <li class="list-group-item">Se eliminó reporte ID 88</li>
+        <li class="list-group-item">Acceso fallido desde IP 192.168.0.44</li>
+      </ul>
+
+      <h5 class="mt-4">Alertas</h5>
+      <div class="alert alert-warning">Revisar el módulo de pagos</div>
+      <div class="alert alert-info">Nueva versión del sistema disponible</div>
+
+      <h5 class="mt-4">Administración Rápida</h5>
+      <div class="btn-group">
+        <button class="btn btn-outline-primary">Configurar App</button>
+        <button class="btn btn-outline-secondary">Respaldar BD</button>
+        <button class="btn btn-outline-danger">Restaurar BD</button>
+        <button class="btn btn-outline-success">Soporte</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DASHBOARD MODERADOR -->
+  <div *ngIf="esModerador()" [@fadeIn]>
+    <h2 class="text-center mb-4 text-secondary">Panel del Moderador</h2>
+
+    <div class="dashboard-cards">
+      <div class="card"><h4>Usuarios Activos</h4><p>87</p></div>
+      <div class="card"><h4>Reportes Nuevos</h4><p>5</p></div>
+      <div class="card"><h4>Comentarios</h4><p>32</p></div>
+      <div class="card"><h4>Publicaciones</h4><p>10</p></div>
+    </div>
+
+    <div class="dashboard-actions mb-4">
+      <button class="btn btn-info">Revisar Usuarios</button>
+      <button class="btn btn-warning">Ver Reportes</button>
+      <button class="btn btn-dark">Historial de Cambios</button>
+      <button class="btn btn-success">Enviar Advertencia</button>
+      <button class="btn btn-outline-danger">Bloquear Usuario</button>
+    </div>
+
+    <div class="moderador-panel">
+      <h5>Actividad Reciente</h5>
+      <ul class="list-group">
+        <li class="list-group-item">Usuario ID 45 cambió su correo</li>
+        <li class="list-group-item">Nuevo comentario en foro</li>
+        <li class="list-group-item">Reporte resuelto por ti</li>
+      </ul>
+
+      <h5 class="mt-4">Mensajes</h5>
+      <div class="alert alert-info">Nuevo mensaje de Administración</div>
+      <div class="alert alert-warning">Reporte de spam pendiente</div>
+    </div>
+  </div>
+
+  <!-- DASHBOARD USUARIO -->
+  <div *ngIf="esUsuario()" class="row mt-4">
+
+    <!-- Gráfico -->
+    <div class="col-md-9 p-3">
+      <h2 class="text-info text-center mb-4">Trading en Tiempo Real</h2>
+      <app-trading-chart [tipo]="tipoSeleccionado" />
+
+      <!-- Historial -->
+      <div class="mt-5 text-white">
+        <h5>Historial de Transacciones</h5>
+        <div class="table-responsive">
+          <table class="table table-dark table-striped text-center">
+            <thead>
+              <tr>
+                <th>Dirección</th>
+                <th>Activo</th>
+                <th>Fecha</th>
+                <th>Monto</th>
+                <th>Resultado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let trans of historial">
+                <td>{{ trans.direccion | uppercase }}</td>
+                <td>{{ trans.tipo }}</td>
+                <td>{{ trans.fecha }}</td>
+                <td>\${{ trans.monto }}</td>
+                <td [ngClass]="{
+                  'text-success': trans.resultado === 'Ganó',
+                  'text-danger': trans.resultado === 'Perdió'
+                }">{{ trans.resultado }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel lateral derecho -->
+    <div class="col-md-3 p-3 bg-dark text-white d-flex flex-column gap-3 border-start">
+      <h4 class="text-center">Cuenta Demo</h4>
+      <p class="text-center fs-4">Saldo: <strong class="text-info">\${{ saldoDemo }}</strong></p>
+
+      <!-- Botón abrir modal -->
+      <button class="btn btn-outline-light" (click)="mostrarModalDeposito = true">Depositar</button>
+
+      <label>Tipo de Activo</label>
+      <select class="form-select" (change)="onTipoCambio($event)">
+        <option value="cetes">CETES</option>
+        <option value="etfs">ETFs</option>
+        <option value="acciones">Acciones</option>
+        <option value="crypto">Criptomonedas</option>
+      </select>
+
+      <label>Duración</label>
+      <select class="form-select" (change)="onDuracionCambio($event)">
+        <option value="30000">30 segundos</option>
+        <option value="60000" selected>1 minuto</option>
+        <option value="300000">5 minutos</option>
+        <option value="600000">10 minutos</option>
+      </select>
+
+      <label>Monto a Apostar</label>
+      <input type="number" class="form-control" value="100" min="1" (input)="onMontoCambio($event)" />
+
+      <div class="d-grid gap-2">
+        <button class="btn btn-success" (click)="apostar('arriba')">↑ Apuesta ARRIBA</button>
+        <button class="btn btn-danger" (click)="apostar('abajo')">↓ Apuesta ABAJO</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Componente de Modal -->
+  <app-deposit-modal
+  *ngIf="mostrarModalDeposito"
+  (cerrar)="mostrarModalDeposito = false"
+  (confirmarDeposito)="realizarDeposito($event)">
+</app-deposit-modal>
+
+</div>

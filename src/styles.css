@@ -1,0 +1,60 @@
+/* src/styles.css */
+body {
+  background-image: url('/assets/img/Fondo2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+
+
+  
+  .container {
+    padding: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .btn {
+      width: 100% !important;
+      margin-bottom: 0.5rem;
+    }
+  
+    .d-flex {
+      flex-direction: column !important;
+      align-items: stretch !important;
+    }
+  
+    .text-center {
+      text-align: center !important;
+    }
+  
+    .navbar-nav {
+      text-align: center;
+    }
+    /* General */
+
+  
+  /* Ajustes generales para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .container,
+    .dashboard-container,
+    .perfil-container,
+    .not-found-container {
+      width: 95% !important;
+      padding: 1rem;
+    }
+  
+    .dashboard-container button {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    table {
+      font-size: 0.9rem;
+    }
+  }
+  
+  }
+  

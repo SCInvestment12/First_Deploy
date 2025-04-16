@@ -1,0 +1,79 @@
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #0f172a;
+  color: white;
+  padding: 2rem;
+}
+
+
+:host {
+  background-color: #101011;
+  display: block;
+  padding: 2rem;
+}
+
+h2, h4, label {
+  color: #38bdf8;
+}
+
+.bg-dark {
+  background-color: #1e293b !important;
+}
+
+input.form-control,
+select.form-select {
+  background-color: #1e293b;
+  color: white;
+  border: 1px solid #334155;
+}
+
+input.form-control:focus,
+select.form-select:focus {
+  background-color: #1e293b;
+  color: white;
+  border-color: #38bdf8;
+  box-shadow: none;
+}
+
+.table-dark th,
+.table-dark td {
+  color: white;
+  vertical-align: middle;
+}
+
+.btn-success {
+  background-color: #22c55e;
+  border-color: #22c55e;
+}
+
+.btn-danger {
+  background-color: #ef4444;
+  border-color: #ef4444;
+}
+
+.btn-success:hover,
+.btn-danger:hover {
+  opacity: 0.9;
+}
+
+.fs-4 {
+  font-size: 1.5rem;
+}
+
+select, input {
+  font-weight: bold;
+}
+
+.border-start {
+  border-left: 2px solid #334155 !important;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+
+  .col-md-3 {
+    margin-top: 2rem;
+  }
+}

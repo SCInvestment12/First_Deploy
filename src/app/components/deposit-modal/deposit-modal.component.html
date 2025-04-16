@@ -1,0 +1,22 @@
+<div class="modal-backdrop">
+    <div class="modal-content bg-dark text-white p-4 rounded shadow">
+      <h5 class="mb-3 text-info">Realizar Depósito</h5>
+  
+      <!-- Campo de monto sin ngModel -->
+      <input
+        type="number"
+        class="form-control mb-3"
+        placeholder="Ingresa el monto"
+        min="1"
+        [value]="monto"
+        (input)="monto = +$any($event.target).value"
+      />
+  
+      <!-- Botones -->
+      <div class="d-flex justify-content-end gap-2">
+        <button class="btn btn-outline-secondary" (click)="cerrarModal()">Cancelar</button>
+        <button class="btn btn-primary" (click)="depositar()">Depositar</button>
+      </div>
+    </div>
+  </div>
+  

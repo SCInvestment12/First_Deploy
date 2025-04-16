@@ -1,0 +1,77 @@
+<div class="register-background d-flex justify-content-center align-items-center">
+  <div class="register-card animate__animated animate__zoomIn">
+    <h2 class="text-center mb-4">Registro de Usuario</h2>
+    <form (ngSubmit)="registrar()">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input #nombre type="text" id="nombre" name="nombre" required />
+        </div>
+
+        <div class="form-group">
+          <label for="apellido">Apellido</label>
+          <input #apellido type="text" id="apellido" name="apellido" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="username">Usuario</label>
+          <input #username type="text" id="username" name="username" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input #password type="password" id="password" name="password" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="curp">CURP</label>
+          <input #curp type="text" id="curp" name="curp" required />
+        </div>
+
+        <div class="form-group">
+          <label for="fechaNacimiento">Fecha de Nacimiento</label>
+          <input #fechaNacimiento type="date" id="fechaNacimiento" name="fechaNacimiento" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="correo">Correo Electrónico</label>
+          <input #correo type="email" id="correo" name="correo" required />
+        </div>
+
+        <div class="form-group">
+          <label for="telefono">Teléfono</label>
+          <input #telefono type="text" id="telefono" name="telefono" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="direccion">Dirección</label>
+        <input #direccion type="text" id="direccion" name="direccion" required />
+
+      </div>
+
+      <div class="form-group form-check text-start">
+        <input #terminos type="checkbox" id="terminos" name="terminos" required />
+        <label for="terminos" class="text-light small">
+          Acepto los
+          <a href="/assets/docs/TerminosYCondiciones.pdf" target="_blank">Términos y Condiciones</a>
+          y el
+          <a href="/assets/docs/AvisoDePrivacidad.pdf" target="_blank">Aviso de Privacidad</a>
+        </label>
+      </div>
+
+      <button
+        type="submit"
+        class="btn-register animate__animated animate__pulse animate__infinite"
+      >
+        Registrarse
+      </button>
+    </form>
+  </div>
+</div>

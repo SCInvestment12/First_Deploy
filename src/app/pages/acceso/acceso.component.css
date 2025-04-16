@@ -1,0 +1,112 @@
+/* acceso.component.css */
+.acceso-container {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .acceso-container button {
+    margin: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .acceso-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* login-page.component.css */
+  .login-form {
+    margin: auto;
+    width: 300px;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+  }
+  
+  .login-form h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .login-form label {
+    display: block;
+    margin-top: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .login-form button {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .login-form button:hover {
+    background-color: #218838;
+  }
+  
+  /* register-page.component.css */
+  .register-form {
+    margin: auto;
+    width: 300px;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background-color: #fdfdfd;
+  }
+  
+  .register-form h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .register-form label {
+    display: block;
+    margin-top: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .register-form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .register-form button {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .register-form button:hover {
+    background-color: #138496;
+  }
+  
